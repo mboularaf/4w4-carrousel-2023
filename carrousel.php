@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Carrousel 
  * Author: Mohamed Boularaf
- * Author url: https://github.com/mboularaf/4w4
+ * Author url: https://github.com/mboularaf
  * Description: Permet d'afficher les images d'une galerie dans une boite modale navigation
  */
 /*
