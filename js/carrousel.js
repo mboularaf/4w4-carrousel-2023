@@ -21,7 +21,11 @@
        console.log('ouvrir la boîte modale')
        carrousel.classList.add('carrousel--activer')
        ajouter_img_dans_carrousel()
-   
+       /*
+       https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+       
+       propriété classlist.contain('carrousel--activer') permet de vérifier si le carrousel est ouvert
+       */ 
    })
    /* ----------------------------------------------------  fermer boîte modale */
    carrousel__x.addEventListener('mousedown', function(){
