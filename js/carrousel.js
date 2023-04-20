@@ -89,11 +89,20 @@
     if(ancien_index!= -1){
       //carrousel__figure.children[ancien_index].style.opacity = 0
       carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer')
-
+      //carrousel__form.children[ancien_index].checked = false ou true
     }
     //carrousel__figure.children[index].style.opacity = 1
     carrousel__figure.children[index].classList.add('carrousel__img--activer')
     ancien_index = index
    }
+   /*
+   permet de vérifier si la classe (carrousel--active) 
+   se trouve dans la liste des classes carrousel
+   carrousel.classList.contain('carrousel--activer') 
+   
+   mdn classList.contain()
+   
+   
+   */
 
    })()//function exécute tout seule
