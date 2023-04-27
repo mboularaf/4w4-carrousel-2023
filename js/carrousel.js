@@ -6,6 +6,8 @@
    let carrousel__x = document.querySelector(".carrousel__x")
    let carrousel__figure  = document.querySelector(".carrousel__figure")
    let carrousel__form  = document.querySelector(".carrousel__form")
+   let carrousel__fleche__droite  = document.querySelector(".carrousel__fleche__droite")
+   let carrousel__fleche__gauche  = document.querySelector("carrousel__fleche__gauche")
    console.log(carrousel__form.tagName)
    /*---------------------------------- Variables du carrousel */
    let galerie = document.querySelector(".galerie")
@@ -99,10 +101,13 @@
    permet de vérifier si la classe (carrousel--active) 
    se trouve dans la liste des classes carrousel
    carrousel.classList.contain('carrousel--activer') 
-   
+  
    mdn classList.contain()
    
    
    */
+   carrousel__fleche__droite
+   carrousel__fleche__gauche
+
 
    })()//function exécute tout seule
