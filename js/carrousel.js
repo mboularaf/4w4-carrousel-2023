@@ -1,6 +1,6 @@
 (function(){
     console.log('Début du carrousel')
-   let bouton = document.querySelector(".carrousel__ouvrir")
+   let galerie__ouverte = document.querySelector("figure")
    /*---------------------------------- Variables du carrousel */
    let carrousel  = document.querySelector(".carrousel")
    let carrousel__x = document.querySelector(".carrousel__x")
@@ -39,7 +39,7 @@
 
 
    /* ----------------------------------------------------  ouvrir boîte modale */
-   bouton.addEventListener('mousedown', function(){
+   galerie__ouverte.addEventListener('mousedown', function(){
        console.log('ouvrir la boîte modale')
        carrousel.classList.add('carrousel--activer')
        
