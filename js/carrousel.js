@@ -120,7 +120,7 @@
    //carrousel__fleche__droite
    //carrousel__fleche__gauche
    bouton_precedent.addEventListener('click', function(){
-    index=index-1;
+    index--
     if (index==-1){
       index = galerie__img.length -1;
     }
@@ -128,7 +128,7 @@
    })
 
    bouton_suivant.addEventListener('click', function(){
-    index=index+1;
+    index++ 
     if (index==galerie__img.length){
       index = 0;
     }
