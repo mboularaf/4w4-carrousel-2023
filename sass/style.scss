@@ -17,9 +17,19 @@
 }
 .carrousel__x{
     position:absolute;
+    top:50px;
+    right: 30px;
+    z-index: 4;
+    font-size: 3rem;
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 2px 9px 7px rgba(0,0,0,0.81);
+    @media screen and (min-width:1000px) {
+    position:absolute;
     top:5px;
     right: 5px;
     z-index: 3;
+    }
 }
 .carrousel__figure{
     //overflow: hidden;
