@@ -105,7 +105,7 @@
     //carrousel__figure.children[index].style.opacity = 1
     carrousel__figure.children[index].classList.add('carrousel__img--activer')
     carrousel__form.children[index].checked = true
-    ancien_index = index
+    ancien_index = index 
    }
    /*
    permet de vérifier si la classe (carrousel--active) 
