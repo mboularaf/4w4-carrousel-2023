@@ -6,8 +6,11 @@
    let carrousel__x = document.querySelector(".carrousel__x")
    let carrousel__figure  = document.querySelector(".carrousel__figure")
    let carrousel__form  = document.querySelector(".carrousel__form")
-   let carrousel__fleche__droite  = document.querySelector(".carrousel__fleche__droite")
-   let carrousel__fleche__gauche  = document.querySelector("carrousel__fleche__gauche")
+   let bouton_precedent = document.querySelector(".carrousel__fleche__gauche");
+   let bouton_suivant = document.querySelector(".carrousel__fleche__droite");
+
+   //let carrousel__fleche__droite  = document.querySelector(".carrousel__fleche__droite")
+   //let carrousel__fleche__gauche  = document.querySelector("carrousel__fleche__gauche")
    console.log(carrousel__form.tagName)
    /*---------------------------------- Variables du carrousel */
    let galerie = document.querySelector(".galerie")
@@ -15,14 +18,31 @@
    // console.log("galerie__img: " + galerie__img.length)
    // console.log(carrousel.tagName)
    /*---------------------------------------------------- positionnement de l'image active du*/
-   let index = 0
-   let ancien_index = -1
+   let index = 0 //identifier l'image courante du carrousel 
+   let ancien_index = -1 //identifier image précédante
    let position = 0 //permet d'indexer les images de la galerie et de la 
+/**
+ * Permet d'initialiser l'ensemble des images du carrousel
+ */
+   for (const elm of galerie__img)
+   {
+    elm.dataset.index = position
+    elm.addEventListener('mousedown', function(e){
+      index = e.target.dataset.index
+      afficher_image(index)
+      console.log(index)
+    })
+    creation_img_carrousel(elm)
+    creation_radio_carrousel()
+   }
+
+
+
    /* ----------------------------------------------------  ouvrir boîte modale */
    bouton.addEventListener('mousedown', function(){
        console.log('ouvrir la boîte modale')
        carrousel.classList.add('carrousel--activer')
-       ajouter_img_dans_carrousel()
+       
        /*
        https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
        
@@ -40,21 +60,10 @@
     * ajouter_img_dans_carrousel
     * Ajouter l'ensemble des images de la galerie dans la boîte modale carrousel
     */
-   function ajouter_img_dans_carrousel()
-   {
+
    
-     for (const elm of galerie__img)
-     {
-      elm.dataset.index = position
-      elm.addEventListener('mousedown', function(){
-        index = this.dataset.index
-        afficher_image(index)
-        console.log(index)
-      })
-      creation_img_carrousel(elm)
-      creation_radio_carrousel()
-     }
-   }
+
+
    function creation_img_carrousel(elm){
           //console.log(elm.getAttribute('src'))
           let img = document.createElement('img')
@@ -79,35 +88,53 @@
     // position += 1
     // position++
     carrousel__form.appendChild(rad)
-    rad.addEventListener('mousedown',function(){
-      console.log(this.dataset.index)
-      index = this.dataset.index
+    rad.addEventListener('mousedown',function(e){
+      console.log(e.target.dataset.index)
+      index = e.target.dataset.index
       afficher_image(index)
     })
    }
    
-   function afficher_image(index){
+  function afficher_image(index){
     
     if(ancien_index!= -1){
       //carrousel__figure.children[ancien_index].style.opacity = 0
       carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer')
-      //carrousel__form.children[ancien_index].checked = false ou true
+      carrousel__form.children[ancien_index].checked = false
     }
     //carrousel__figure.children[index].style.opacity = 1
     carrousel__figure.children[index].classList.add('carrousel__img--activer')
+    carrousel__form.children[index].checked = true
     ancien_index = index
    }
    /*
    permet de vérifier si la classe (carrousel--active) 
    se trouve dans la liste des classes carrousel
    carrousel.classList.contain('carrousel--activer') 
-  
+   
    mdn classList.contain()
    
    
    */
-   carrousel__fleche__droite
-   carrousel__fleche__gauche
+   
+   //carrousel__fleche__droite
+   //carrousel__fleche__gauche
+   bouton_precedent.addEventListener('click', function(){
+    index=index-1;
+    if (index==-1){
+      index = galerie__img.length -1;
+    }
+    afficher_image(index);
+   })
+
+   bouton_suivant.addEventListener('click', function(){
+    index=index+1;
+    if (index==galerie__img.length){
+      index = 0;
+    }
+    afficher_image(index);
+   }
+  );
 
 
    })()//function exécute tout seule

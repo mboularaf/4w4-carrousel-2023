@@ -1,13 +1,19 @@
 .carrousel{
-    position: absolute;
-    width: 50%;
-    height:50%;
-    left: 25%;
-    top: 25%;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    left: 0%;
+    top: 0%;
     border:1px solid #4444;
     transform: scale(0);
     transition: transform .5s;
     background-color: rgb(240, 240, 219);
+    @media screen and (min-width:1000px) {
+        width: 50%;
+        height:50%;
+        left: 25%;
+        top: 25%;
+    }
 }
 .carrousel__x{
     position:absolute;
@@ -46,3 +52,5 @@
     display: inline-block;
     margin: 5px;
 }
+
+  
