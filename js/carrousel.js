@@ -118,7 +118,7 @@ function redimensionner_carrousel(){
   const imageHeight =carrousel__figure.children[index].naturalHeight
   
   let carrouselWidth = windowWidth 
-  if( carrouselWidth>1000)
+  if( carrouselWidth>1000) 
 {
   carrouselWidth=windowWidth - windowWidth/2
 }
