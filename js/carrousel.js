@@ -1,5 +1,5 @@
 (function(){
-    console.log('Début du carrousel')
+    console.log('Début du carrousel') 
    let galerie__ouverte = document.querySelector("figure")
    /*---------------------------------- Variables du carrousel */
    let carrousel  = document.querySelector(".carrousel")
