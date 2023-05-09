@@ -111,6 +111,10 @@
     carrousel__form.children[index].checked = true
     ancien_index = index 
    }
+/**
+ * Redimensionne le carrousel pour permettre un affichage optimal
+ * 
+ */   
 function redimensionner_carrousel(){
   const windowWidth= window.innerWidth
   const windowHeight= window.innerHeight
@@ -120,13 +124,13 @@ function redimensionner_carrousel(){
   let carrouselWidth = windowWidth 
   if( carrouselWidth>1000) 
 {
-  carrouselWidth=windowWidth - windowWidth/2
+  carrouselWidth=windowWidth - windowWidth/3
 }
    let carrouselHeight = carrouselWidth * imageHeight/imageWidth
    
    carrousel.style.width = `${carrouselWidth}px`
    carrousel.style.height = `${carrouselHeight}px`
-   carrousel.style.top=`${(windowWidth-carrouselHeight)/2}px`
+   carrousel.style.top=`${(windowHeight-carrouselHeight)/2}px`
    carrousel.style.left=`${(windowWidth-carrouselWidth)/2}px`
   
   console.log(
