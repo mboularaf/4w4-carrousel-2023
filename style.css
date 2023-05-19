@@ -7,7 +7,7 @@
   border: 1px solid rgba(68, 68, 68, 0.2666666667);
   transform: scale(0);
   transition: transform 0.5s;
-  background-color: rgb(240, 240, 219);
+  background-color: rgb(215, 220, 244);
 }
 @media screen and (min-width: 1000px) {
   .carrousel {
@@ -76,17 +76,33 @@
 .carrousel__fleche__gauche {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 10%;
   background-color: rgb(181, 243, 119);
   opacity: 0.6;
-  font-size: 4rem;
+  font-size: 2rem;
+}
+@media screen and (min-width: 1000px) {
+  .carrousel__fleche__gauche {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 4rem;
+  }
 }
 
 .carrousel__fleche__droite {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 10%;
   opacity: 0.6;
   background-color: rgb(181, 243, 119);
-  font-size: 4rem;
+  font-size: 2rem;
+}
+@media screen and (min-width: 1000px) {
+  .carrousel__fleche__droite {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 4rem;
+  }
 }
